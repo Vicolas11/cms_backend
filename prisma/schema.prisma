@@ -1,0 +1,106 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator joi {
+  provider = "prisma-joi-generator"
+  output   = "./joi"
+}
+
+generator erd {
+  provider = "prisma-erd-generator"
+}
+
+enum Role {
+  Admin
+  Student
+  Dean
+  HOD
+  Student_Affairs
+}
+
+enum Gender {
+  Male
+  Female
+}
+
+enum Faculty {
+  Science     @map("College of Applied Sciences")
+  Education   @map("College of Education")
+  Information @map("College of Information Technology")
+  Law         @map("College of Law")
+  Management  @map("College of Management Studies")
+}
+
+enum Department {
+  Accounting
+  Biochemistry
+  Botany
+  Business      @map("Business Administration")
+  ComputerSci   @map("Computer Science")
+  ComputerEdu   @map("Computer Education")
+  Criminology
+  Economics
+  English       @map("English and Literally Studies")
+  Information   @map("Information Technology")
+  International @map("International Relation and Diplomacy")
+  Law
+  Microbiology
+  Public        @map("Public Administration")
+}
+
+model User {
+  id           String             @id @default(uuid())
+  role         Role               @default(Student)
+  name         String
+  email        String             @unique
+  matricNum    String?            @unique
+  password     String
+  avatar       String
+  otp          Int?
+  gender       Gender
+  faculty      Faculty?
+  department   Department?
+  tokens       BlacklistedToken[]
+  auditTrail   AuditTrail[]
+  complaints   Complaint[]        @relation("complainer")
+  complaintsTo Complaint[]        @relation("reportedTo")
+  createdAt    DateTime           @default(now())
+}
+
+model Complaint {
+  id               String   @id @default(uuid())
+  subject          String
+  complain         String
+  reportedTo       User     @relation("reportedTo", fields: [reportedToUserId], references: [id])
+  complainer       User     @relation("complainer", fields: [complainerUserId], references: [id])
+  reportedToUserId String
+  complainerUserId String
+  hasReplied       Boolean  @default(false)
+  createdAt        DateTime @default(now())
+}
+
+model BlacklistedToken {
+  id        String   @id @default(uuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  token     String   @unique @db.VarChar(1024)
+  createdAt DateTime @default(now())
+}
+
+model AuditTrail {
+  id         String   @id @default(uuid())
+  actor      User?    @relation(fields: [actorId], references: [id])
+  actorId    String?
+  action     String
+  message    String
+  status     Int      @default(200)
+  ipAddress  String
+  userAgent  String
+  timestramp DateTime @default(now())
+}
