@@ -9,6 +9,5 @@ export const UserCreateManyInputSchemaObject = {
   matricNum: Joi.alternatives().try(Joi.string()),
   password: Joi.string().required(),
   avatar: Joi.string().required(),
-  otp: Joi.alternatives().try(Joi.number()),
   createdAt: Joi.date()
 }

@@ -4,7 +4,9 @@ import { SortOrderSchema } from '../enums/SortOrder.schema';
 import { SortOrderInputSchemaObject } from './SortOrderInput.schema';
 import { BlacklistedTokenOrderByRelationAggregateInputSchemaObject } from './BlacklistedTokenOrderByRelationAggregateInput.schema';
 import { AuditTrailOrderByRelationAggregateInputSchemaObject } from './AuditTrailOrderByRelationAggregateInput.schema';
-import { ComplaintOrderByRelationAggregateInputSchemaObject } from './ComplaintOrderByRelationAggregateInput.schema'
+import { OTPOrderByWithRelationInputSchemaObject } from './OTPOrderByWithRelationInput.schema';
+import { ComplaintOrderByRelationAggregateInputSchemaObject } from './ComplaintOrderByRelationAggregateInput.schema';
+import { ComplaintOrderByWithRelationInputSchemaObject } from './ComplaintOrderByWithRelationInput.schema'
 
 export const UserOrderByWithRelationInputSchemaObject = {
     id: SortOrderSchema,
@@ -15,8 +17,6 @@ export const UserOrderByWithRelationInputSchemaObject = {
 Joi.object().keys(SortOrderInputSchemaObject)),
   password: SortOrderSchema,
   avatar: SortOrderSchema,
-  otp: Joi.alternatives().try(SortOrderSchema,
-Joi.object().keys(SortOrderInputSchemaObject)),
   gender: SortOrderSchema,
   faculty: Joi.alternatives().try(SortOrderSchema,
 Joi.object().keys(SortOrderInputSchemaObject)),
@@ -25,6 +25,7 @@ Joi.object().keys(SortOrderInputSchemaObject)),
   createdAt: SortOrderSchema,
   tokens: Joi.object().keys(BlacklistedTokenOrderByRelationAggregateInputSchemaObject),
   auditTrail: Joi.object().keys(AuditTrailOrderByRelationAggregateInputSchemaObject),
+  otp: Joi.object().keys(OTPOrderByWithRelationInputSchemaObject),
   complaints: Joi.object().keys(ComplaintOrderByRelationAggregateInputSchemaObject),
-  complaintsTo: Joi.object().keys(ComplaintOrderByRelationAggregateInputSchemaObject)
+  reportedTo: Joi.object().keys(ComplaintOrderByWithRelationInputSchemaObject)
 }

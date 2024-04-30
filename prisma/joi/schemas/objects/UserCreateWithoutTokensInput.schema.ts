@@ -1,8 +1,9 @@
 // @ts-nocheck
 import Joi from 'joi';
 import { AuditTrailCreateNestedManyWithoutActorInputSchemaObject } from './AuditTrailCreateNestedManyWithoutActorInput.schema';
+import { OTPCreateNestedOneWithoutUserInputSchemaObject } from './OTPCreateNestedOneWithoutUserInput.schema';
 import { ComplaintCreateNestedManyWithoutComplainerInputSchemaObject } from './ComplaintCreateNestedManyWithoutComplainerInput.schema';
-import { ComplaintCreateNestedManyWithoutReportedToInputSchemaObject } from './ComplaintCreateNestedManyWithoutReportedToInput.schema'
+import { ComplaintCreateNestedOneWithoutReportedToInputSchemaObject } from './ComplaintCreateNestedOneWithoutReportedToInput.schema'
 
 export const UserCreateWithoutTokensInputSchemaObject = {
     id: Joi.string(),
@@ -11,9 +12,9 @@ export const UserCreateWithoutTokensInputSchemaObject = {
   matricNum: Joi.alternatives().try(Joi.string()),
   password: Joi.string().required(),
   avatar: Joi.string().required(),
-  otp: Joi.alternatives().try(Joi.number()),
   createdAt: Joi.date(),
   auditTrail: Joi.object().keys(AuditTrailCreateNestedManyWithoutActorInputSchemaObject),
+  otp: Joi.object().keys(OTPCreateNestedOneWithoutUserInputSchemaObject),
   complaints: Joi.object().keys(ComplaintCreateNestedManyWithoutComplainerInputSchemaObject),
-  complaintsTo: Joi.object().keys(ComplaintCreateNestedManyWithoutReportedToInputSchemaObject)
+  reportedTo: Joi.object().keys(ComplaintCreateNestedOneWithoutReportedToInputSchemaObject)
 }

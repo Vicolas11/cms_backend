@@ -10,7 +10,6 @@ export const UserMaxOrderByAggregateInputSchemaObject = {
   matricNum: SortOrderSchema,
   password: SortOrderSchema,
   avatar: SortOrderSchema,
-  otp: SortOrderSchema,
   gender: SortOrderSchema,
   faculty: SortOrderSchema,
   department: SortOrderSchema,

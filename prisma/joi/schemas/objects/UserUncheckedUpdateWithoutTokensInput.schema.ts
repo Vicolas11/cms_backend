@@ -3,14 +3,14 @@ import Joi from 'joi';
 import { StringFieldUpdateOperationsInputSchemaObject } from './StringFieldUpdateOperationsInput.schema';
 import { EnumRoleFieldUpdateOperationsInputSchemaObject } from './EnumRoleFieldUpdateOperationsInput.schema';
 import { NullableStringFieldUpdateOperationsInputSchemaObject } from './NullableStringFieldUpdateOperationsInput.schema';
-import { NullableIntFieldUpdateOperationsInputSchemaObject } from './NullableIntFieldUpdateOperationsInput.schema';
 import { EnumGenderFieldUpdateOperationsInputSchemaObject } from './EnumGenderFieldUpdateOperationsInput.schema';
 import { NullableEnumFacultyFieldUpdateOperationsInputSchemaObject } from './NullableEnumFacultyFieldUpdateOperationsInput.schema';
 import { NullableEnumDepartmentFieldUpdateOperationsInputSchemaObject } from './NullableEnumDepartmentFieldUpdateOperationsInput.schema';
 import { DateTimeFieldUpdateOperationsInputSchemaObject } from './DateTimeFieldUpdateOperationsInput.schema';
 import { AuditTrailUncheckedUpdateManyWithoutActorNestedInputSchemaObject } from './AuditTrailUncheckedUpdateManyWithoutActorNestedInput.schema';
+import { OTPUncheckedUpdateOneWithoutUserNestedInputSchemaObject } from './OTPUncheckedUpdateOneWithoutUserNestedInput.schema';
 import { ComplaintUncheckedUpdateManyWithoutComplainerNestedInputSchemaObject } from './ComplaintUncheckedUpdateManyWithoutComplainerNestedInput.schema';
-import { ComplaintUncheckedUpdateManyWithoutReportedToNestedInputSchemaObject } from './ComplaintUncheckedUpdateManyWithoutReportedToNestedInput.schema'
+import { ComplaintUncheckedUpdateOneWithoutReportedToNestedInputSchemaObject } from './ComplaintUncheckedUpdateOneWithoutReportedToNestedInput.schema'
 
 export const UserUncheckedUpdateWithoutTokensInputSchemaObject = {
     id: Joi.alternatives().try(Joi.string(),
@@ -26,13 +26,12 @@ Joi.object().keys(NullableStringFieldUpdateOperationsInputSchemaObject)),
 Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),
   avatar: Joi.alternatives().try(Joi.string(),
 Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),
-  otp: Joi.alternatives().try(Joi.number(),
-Joi.object().keys(NullableIntFieldUpdateOperationsInputSchemaObject)),
   gender: Joi.alternatives().try(Joi.object().keys(EnumGenderFieldUpdateOperationsInputSchemaObject)),
   faculty: Joi.alternatives().try(Joi.object().keys(NullableEnumFacultyFieldUpdateOperationsInputSchemaObject)),
   department: Joi.alternatives().try(Joi.object().keys(NullableEnumDepartmentFieldUpdateOperationsInputSchemaObject)),
   createdAt: Joi.alternatives().try(Joi.object().keys(DateTimeFieldUpdateOperationsInputSchemaObject)),
   auditTrail: Joi.object().keys(AuditTrailUncheckedUpdateManyWithoutActorNestedInputSchemaObject),
+  otp: Joi.object().keys(OTPUncheckedUpdateOneWithoutUserNestedInputSchemaObject),
   complaints: Joi.object().keys(ComplaintUncheckedUpdateManyWithoutComplainerNestedInputSchemaObject),
-  complaintsTo: Joi.object().keys(ComplaintUncheckedUpdateManyWithoutReportedToNestedInputSchemaObject)
+  reportedTo: Joi.object().keys(ComplaintUncheckedUpdateOneWithoutReportedToNestedInputSchemaObject)
 }

@@ -3,14 +3,17 @@ import Joi from 'joi';
 import { StringFilterSchemaObject } from './StringFilter.schema';
 import { EnumRoleFilterSchemaObject } from './EnumRoleFilter.schema';
 import { StringNullableFilterSchemaObject } from './StringNullableFilter.schema';
-import { IntNullableFilterSchemaObject } from './IntNullableFilter.schema';
 import { EnumGenderFilterSchemaObject } from './EnumGenderFilter.schema';
 import { EnumFacultyNullableFilterSchemaObject } from './EnumFacultyNullableFilter.schema';
 import { EnumDepartmentNullableFilterSchemaObject } from './EnumDepartmentNullableFilter.schema';
 import { DateTimeFilterSchemaObject } from './DateTimeFilter.schema';
 import { BlacklistedTokenListRelationFilterSchemaObject } from './BlacklistedTokenListRelationFilter.schema';
 import { AuditTrailListRelationFilterSchemaObject } from './AuditTrailListRelationFilter.schema';
-import { ComplaintListRelationFilterSchemaObject } from './ComplaintListRelationFilter.schema'
+import { OTPRelationFilterSchemaObject } from './OTPRelationFilter.schema';
+import { OTPWhereInputSchemaObject } from './OTPWhereInput.schema';
+import { ComplaintListRelationFilterSchemaObject } from './ComplaintListRelationFilter.schema';
+import { ComplaintRelationFilterSchemaObject } from './ComplaintRelationFilter.schema';
+import { ComplaintWhereInputSchemaObject } from './ComplaintWhereInput.schema'
 
 export const UserWhereInputSchemaObject = {
     AND: Joi.alternatives().try(Joi.link('#UserWhereInput'),
@@ -31,14 +34,15 @@ Joi.string()),
 Joi.string()),
   avatar: Joi.alternatives().try(Joi.object().keys(StringFilterSchemaObject),
 Joi.string()),
-  otp: Joi.alternatives().try(Joi.object().keys(IntNullableFilterSchemaObject),
-Joi.number()),
   gender: Joi.alternatives().try(Joi.object().keys(EnumGenderFilterSchemaObject)),
   faculty: Joi.alternatives().try(Joi.object().keys(EnumFacultyNullableFilterSchemaObject)),
   department: Joi.alternatives().try(Joi.object().keys(EnumDepartmentNullableFilterSchemaObject)),
   createdAt: Joi.alternatives().try(Joi.object().keys(DateTimeFilterSchemaObject)),
   tokens: Joi.object().keys(BlacklistedTokenListRelationFilterSchemaObject),
   auditTrail: Joi.object().keys(AuditTrailListRelationFilterSchemaObject),
+  otp: Joi.alternatives().try(Joi.object().keys(OTPRelationFilterSchemaObject),
+Joi.object().keys(OTPWhereInputSchemaObject)),
   complaints: Joi.object().keys(ComplaintListRelationFilterSchemaObject),
-  complaintsTo: Joi.object().keys(ComplaintListRelationFilterSchemaObject)
+  reportedTo: Joi.alternatives().try(Joi.object().keys(ComplaintRelationFilterSchemaObject),
+Joi.object().keys(ComplaintWhereInputSchemaObject))
 }

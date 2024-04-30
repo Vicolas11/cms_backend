@@ -2,8 +2,9 @@
 import Joi from 'joi';
 import { BlacklistedTokenCreateNestedManyWithoutUserInputSchemaObject } from './BlacklistedTokenCreateNestedManyWithoutUserInput.schema';
 import { AuditTrailCreateNestedManyWithoutActorInputSchemaObject } from './AuditTrailCreateNestedManyWithoutActorInput.schema';
+import { OTPCreateNestedOneWithoutUserInputSchemaObject } from './OTPCreateNestedOneWithoutUserInput.schema';
 import { ComplaintCreateNestedManyWithoutComplainerInputSchemaObject } from './ComplaintCreateNestedManyWithoutComplainerInput.schema';
-import { ComplaintCreateNestedManyWithoutReportedToInputSchemaObject } from './ComplaintCreateNestedManyWithoutReportedToInput.schema'
+import { ComplaintCreateNestedOneWithoutReportedToInputSchemaObject } from './ComplaintCreateNestedOneWithoutReportedToInput.schema'
 
 export const UserCreateInputSchemaObject = {
     id: Joi.string(),
@@ -12,10 +13,10 @@ export const UserCreateInputSchemaObject = {
   matricNum: Joi.alternatives().try(Joi.string()),
   password: Joi.string().required(),
   avatar: Joi.string().required(),
-  otp: Joi.alternatives().try(Joi.number()),
   createdAt: Joi.date(),
   tokens: Joi.object().keys(BlacklistedTokenCreateNestedManyWithoutUserInputSchemaObject),
   auditTrail: Joi.object().keys(AuditTrailCreateNestedManyWithoutActorInputSchemaObject),
+  otp: Joi.object().keys(OTPCreateNestedOneWithoutUserInputSchemaObject),
   complaints: Joi.object().keys(ComplaintCreateNestedManyWithoutComplainerInputSchemaObject),
-  complaintsTo: Joi.object().keys(ComplaintCreateNestedManyWithoutReportedToInputSchemaObject)
+  reportedTo: Joi.object().keys(ComplaintCreateNestedOneWithoutReportedToInputSchemaObject)
 }

@@ -3,7 +3,6 @@ import Joi from 'joi';
 import { StringWithAggregatesFilterSchemaObject } from './StringWithAggregatesFilter.schema';
 import { EnumRoleWithAggregatesFilterSchemaObject } from './EnumRoleWithAggregatesFilter.schema';
 import { StringNullableWithAggregatesFilterSchemaObject } from './StringNullableWithAggregatesFilter.schema';
-import { IntNullableWithAggregatesFilterSchemaObject } from './IntNullableWithAggregatesFilter.schema';
 import { EnumGenderWithAggregatesFilterSchemaObject } from './EnumGenderWithAggregatesFilter.schema';
 import { EnumFacultyNullableWithAggregatesFilterSchemaObject } from './EnumFacultyNullableWithAggregatesFilter.schema';
 import { EnumDepartmentNullableWithAggregatesFilterSchemaObject } from './EnumDepartmentNullableWithAggregatesFilter.schema';
@@ -28,8 +27,6 @@ Joi.string()),
 Joi.string()),
   avatar: Joi.alternatives().try(Joi.object().keys(StringWithAggregatesFilterSchemaObject),
 Joi.string()),
-  otp: Joi.alternatives().try(Joi.object().keys(IntNullableWithAggregatesFilterSchemaObject),
-Joi.number()),
   gender: Joi.alternatives().try(Joi.object().keys(EnumGenderWithAggregatesFilterSchemaObject)),
   faculty: Joi.alternatives().try(Joi.object().keys(EnumFacultyNullableWithAggregatesFilterSchemaObject)),
   department: Joi.alternatives().try(Joi.object().keys(EnumDepartmentNullableWithAggregatesFilterSchemaObject)),

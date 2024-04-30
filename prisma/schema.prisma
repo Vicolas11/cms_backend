@@ -55,22 +55,22 @@ enum Department {
 }
 
 model User {
-  id           String             @id @default(uuid())
-  role         Role               @default(Student)
-  name         String
-  email        String             @unique
-  matricNum    String?            @unique
-  password     String
-  avatar       String
-  otp          Int?
-  gender       Gender
-  faculty      Faculty?
-  department   Department?
-  tokens       BlacklistedToken[]
-  auditTrail   AuditTrail[]
-  complaints   Complaint[]        @relation("complainer")
-  complaintsTo Complaint[]        @relation("reportedTo")
-  createdAt    DateTime           @default(now())
+  id         String             @id @default(uuid())
+  role       Role               @default(Student)
+  name       String
+  email      String             @unique
+  matricNum  String?            @unique
+  password   String
+  avatar     String
+  gender     Gender
+  faculty    Faculty?
+  department Department?
+  tokens     BlacklistedToken[]
+  auditTrail AuditTrail[]
+  otp        OTP?
+  complaints Complaint[]        @relation("complainer")
+  reportedTo Complaint?         @relation("reportedTo")
+  createdAt  DateTime           @default(now())
 }
 
 model Complaint {
@@ -79,7 +79,7 @@ model Complaint {
   complain         String
   reportedTo       User     @relation("reportedTo", fields: [reportedToUserId], references: [id])
   complainer       User     @relation("complainer", fields: [complainerUserId], references: [id])
-  reportedToUserId String
+  reportedToUserId String   @unique
   complainerUserId String
   hasReplied       Boolean  @default(false)
   createdAt        DateTime @default(now())
@@ -103,4 +103,12 @@ model AuditTrail {
   ipAddress  String
   userAgent  String
   timestramp DateTime @default(now())
+}
+
+model OTP {
+  id            String   @id @default(uuid())
+  otp           String
+  user          User     @relation(fields: [userId], references: [id])
+  userId        String   @unique
+  otpExpiration DateTime
 }

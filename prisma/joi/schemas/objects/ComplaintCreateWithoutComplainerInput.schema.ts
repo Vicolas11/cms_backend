@@ -1,6 +1,6 @@
 // @ts-nocheck
 import Joi from 'joi';
-import { UserCreateNestedOneWithoutComplaintsToInputSchemaObject } from './UserCreateNestedOneWithoutComplaintsToInput.schema'
+import { UserCreateNestedOneWithoutReportedToInputSchemaObject } from './UserCreateNestedOneWithoutReportedToInput.schema'
 
 export const ComplaintCreateWithoutComplainerInputSchemaObject = {
     id: Joi.string(),
@@ -8,5 +8,5 @@ export const ComplaintCreateWithoutComplainerInputSchemaObject = {
   complain: Joi.string().required(),
   hasReplied: Joi.boolean(),
   createdAt: Joi.date(),
-  reportedTo: Joi.object().keys(UserCreateNestedOneWithoutComplaintsToInputSchemaObject)
+  reportedTo: Joi.object().keys(UserCreateNestedOneWithoutReportedToInputSchemaObject)
 }
