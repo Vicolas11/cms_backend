@@ -12,8 +12,7 @@ import { AuditTrailListRelationFilterSchemaObject } from './AuditTrailListRelati
 import { OTPRelationFilterSchemaObject } from './OTPRelationFilter.schema';
 import { OTPWhereInputSchemaObject } from './OTPWhereInput.schema';
 import { ComplaintListRelationFilterSchemaObject } from './ComplaintListRelationFilter.schema';
-import { ComplaintRelationFilterSchemaObject } from './ComplaintRelationFilter.schema';
-import { ComplaintWhereInputSchemaObject } from './ComplaintWhereInput.schema'
+import { ResponseListRelationFilterSchemaObject } from './ResponseListRelationFilter.schema'
 
 export const UserWhereInputSchemaObject = {
     AND: Joi.alternatives().try(Joi.link('#UserWhereInput'),
@@ -43,6 +42,6 @@ Joi.string()),
   otp: Joi.alternatives().try(Joi.object().keys(OTPRelationFilterSchemaObject),
 Joi.object().keys(OTPWhereInputSchemaObject)),
   complaints: Joi.object().keys(ComplaintListRelationFilterSchemaObject),
-  reportedTo: Joi.alternatives().try(Joi.object().keys(ComplaintRelationFilterSchemaObject),
-Joi.object().keys(ComplaintWhereInputSchemaObject))
+  reportedTo: Joi.object().keys(ComplaintListRelationFilterSchemaObject),
+  Response: Joi.object().keys(ResponseListRelationFilterSchemaObject)
 }

@@ -10,7 +10,8 @@ import { DateTimeFieldUpdateOperationsInputSchemaObject } from './DateTimeFieldU
 import { BlacklistedTokenUncheckedUpdateManyWithoutUserNestedInputSchemaObject } from './BlacklistedTokenUncheckedUpdateManyWithoutUserNestedInput.schema';
 import { AuditTrailUncheckedUpdateManyWithoutActorNestedInputSchemaObject } from './AuditTrailUncheckedUpdateManyWithoutActorNestedInput.schema';
 import { ComplaintUncheckedUpdateManyWithoutComplainerNestedInputSchemaObject } from './ComplaintUncheckedUpdateManyWithoutComplainerNestedInput.schema';
-import { ComplaintUncheckedUpdateOneWithoutReportedToNestedInputSchemaObject } from './ComplaintUncheckedUpdateOneWithoutReportedToNestedInput.schema'
+import { ComplaintUncheckedUpdateManyWithoutReportedToNestedInputSchemaObject } from './ComplaintUncheckedUpdateManyWithoutReportedToNestedInput.schema';
+import { ResponseUncheckedUpdateManyWithoutUserNestedInputSchemaObject } from './ResponseUncheckedUpdateManyWithoutUserNestedInput.schema'
 
 export const UserUncheckedUpdateWithoutOtpInputSchemaObject = {
     id: Joi.alternatives().try(Joi.string(),
@@ -33,5 +34,6 @@ Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),
   tokens: Joi.object().keys(BlacklistedTokenUncheckedUpdateManyWithoutUserNestedInputSchemaObject),
   auditTrail: Joi.object().keys(AuditTrailUncheckedUpdateManyWithoutActorNestedInputSchemaObject),
   complaints: Joi.object().keys(ComplaintUncheckedUpdateManyWithoutComplainerNestedInputSchemaObject),
-  reportedTo: Joi.object().keys(ComplaintUncheckedUpdateOneWithoutReportedToNestedInputSchemaObject)
+  reportedTo: Joi.object().keys(ComplaintUncheckedUpdateManyWithoutReportedToNestedInputSchemaObject),
+  Response: Joi.object().keys(ResponseUncheckedUpdateManyWithoutUserNestedInputSchemaObject)
 }

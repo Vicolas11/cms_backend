@@ -3,7 +3,8 @@ import Joi from 'joi';
 import { AuditTrailCreateNestedManyWithoutActorInputSchemaObject } from './AuditTrailCreateNestedManyWithoutActorInput.schema';
 import { OTPCreateNestedOneWithoutUserInputSchemaObject } from './OTPCreateNestedOneWithoutUserInput.schema';
 import { ComplaintCreateNestedManyWithoutComplainerInputSchemaObject } from './ComplaintCreateNestedManyWithoutComplainerInput.schema';
-import { ComplaintCreateNestedOneWithoutReportedToInputSchemaObject } from './ComplaintCreateNestedOneWithoutReportedToInput.schema'
+import { ComplaintCreateNestedManyWithoutReportedToInputSchemaObject } from './ComplaintCreateNestedManyWithoutReportedToInput.schema';
+import { ResponseCreateNestedManyWithoutUserInputSchemaObject } from './ResponseCreateNestedManyWithoutUserInput.schema'
 
 export const UserCreateWithoutTokensInputSchemaObject = {
     id: Joi.string(),
@@ -16,5 +17,6 @@ export const UserCreateWithoutTokensInputSchemaObject = {
   auditTrail: Joi.object().keys(AuditTrailCreateNestedManyWithoutActorInputSchemaObject),
   otp: Joi.object().keys(OTPCreateNestedOneWithoutUserInputSchemaObject),
   complaints: Joi.object().keys(ComplaintCreateNestedManyWithoutComplainerInputSchemaObject),
-  reportedTo: Joi.object().keys(ComplaintCreateNestedOneWithoutReportedToInputSchemaObject)
+  reportedTo: Joi.object().keys(ComplaintCreateNestedManyWithoutReportedToInputSchemaObject),
+  Response: Joi.object().keys(ResponseCreateNestedManyWithoutUserInputSchemaObject)
 }

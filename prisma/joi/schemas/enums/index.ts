@@ -1,6 +1,7 @@
 export * from './TransactionIsolationLevel.schema';
 export * from './UserScalarFieldEnum.schema';
 export * from './ComplaintScalarFieldEnum.schema';
+export * from './ResponseScalarFieldEnum.schema';
 export * from './BlacklistedTokenScalarFieldEnum.schema';
 export * from './AuditTrailScalarFieldEnum.schema';
 export * from './OTPScalarFieldEnum.schema';

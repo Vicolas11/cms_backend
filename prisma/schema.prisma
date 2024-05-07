@@ -69,25 +69,39 @@ model User {
   auditTrail AuditTrail[]
   otp        OTP?
   complaints Complaint[]        @relation("complainer")
-  reportedTo Complaint?         @relation("reportedTo")
+  reportedTo Complaint[]        @relation("reportedTo")
   createdAt  DateTime           @default(now())
+  Response   Response[]
 }
 
 model Complaint {
-  id               String   @id @default(uuid())
+  id               String    @id @default(uuid())
   subject          String
-  complain         String
-  reportedTo       User     @relation("reportedTo", fields: [reportedToUserId], references: [id])
-  complainer       User     @relation("complainer", fields: [complainerUserId], references: [id])
-  reportedToUserId String   @unique
+  body             String
+  reportedTo       User      @relation("reportedTo", fields: [reportedToUserId], references: [id], onDelete: Cascade)
+  complainer       User      @relation("complainer", fields: [complainerUserId], references: [id], onDelete: Cascade)
+  reportedToUserId String
   complainerUserId String
-  hasReplied       Boolean  @default(false)
-  createdAt        DateTime @default(now())
+  response         Response?
+  hasReplied       Boolean   @default(false)
+  hasOpened        Boolean   @default(false)
+  createdAt        DateTime  @default(now())
+  responseId       String?
+}
+
+model Response {
+  id          String    @id @default(uuid())
+  body        String
+  createdAt   DateTime  @default(now())
+  complaint   Complaint @relation(fields: [complaintId], references: [id], onDelete: Cascade)
+  complaintId String    @unique
+  User        User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String?
 }
 
 model BlacklistedToken {
   id        String   @id @default(uuid())
-  user      User     @relation(fields: [userId], references: [id])
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String
   token     String   @unique @db.VarChar(1024)
   createdAt DateTime @default(now())
@@ -108,7 +122,7 @@ model AuditTrail {
 model OTP {
   id            String   @id @default(uuid())
   otp           String
-  user          User     @relation(fields: [userId], references: [id])
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId        String   @unique
   otpExpiration DateTime
 }

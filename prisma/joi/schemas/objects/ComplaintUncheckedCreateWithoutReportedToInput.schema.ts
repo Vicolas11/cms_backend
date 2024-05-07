@@ -1,12 +1,15 @@
 // @ts-nocheck
 import Joi from 'joi';
-
+import { ResponseUncheckedCreateNestedOneWithoutComplaintInputSchemaObject } from './ResponseUncheckedCreateNestedOneWithoutComplaintInput.schema'
 
 export const ComplaintUncheckedCreateWithoutReportedToInputSchemaObject = {
     id: Joi.string(),
   subject: Joi.string().required(),
-  complain: Joi.string().required(),
+  body: Joi.string().required(),
   complainerUserId: Joi.string().required(),
   hasReplied: Joi.boolean(),
-  createdAt: Joi.date()
+  hasOpened: Joi.boolean(),
+  createdAt: Joi.date(),
+  responseId: Joi.alternatives().try(Joi.string()),
+  response: Joi.object().keys(ResponseUncheckedCreateNestedOneWithoutComplaintInputSchemaObject)
 }

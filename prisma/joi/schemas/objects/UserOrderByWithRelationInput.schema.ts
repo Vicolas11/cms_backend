@@ -6,7 +6,7 @@ import { BlacklistedTokenOrderByRelationAggregateInputSchemaObject } from './Bla
 import { AuditTrailOrderByRelationAggregateInputSchemaObject } from './AuditTrailOrderByRelationAggregateInput.schema';
 import { OTPOrderByWithRelationInputSchemaObject } from './OTPOrderByWithRelationInput.schema';
 import { ComplaintOrderByRelationAggregateInputSchemaObject } from './ComplaintOrderByRelationAggregateInput.schema';
-import { ComplaintOrderByWithRelationInputSchemaObject } from './ComplaintOrderByWithRelationInput.schema'
+import { ResponseOrderByRelationAggregateInputSchemaObject } from './ResponseOrderByRelationAggregateInput.schema'
 
 export const UserOrderByWithRelationInputSchemaObject = {
     id: SortOrderSchema,
@@ -27,5 +27,6 @@ Joi.object().keys(SortOrderInputSchemaObject)),
   auditTrail: Joi.object().keys(AuditTrailOrderByRelationAggregateInputSchemaObject),
   otp: Joi.object().keys(OTPOrderByWithRelationInputSchemaObject),
   complaints: Joi.object().keys(ComplaintOrderByRelationAggregateInputSchemaObject),
-  reportedTo: Joi.object().keys(ComplaintOrderByWithRelationInputSchemaObject)
+  reportedTo: Joi.object().keys(ComplaintOrderByRelationAggregateInputSchemaObject),
+  Response: Joi.object().keys(ResponseOrderByRelationAggregateInputSchemaObject)
 }
