@@ -2,7 +2,9 @@
   "compilerOptions": {
     /* Language and Environment */
     "target": "ES2018",                      /* Control what method is used to detect module-format JS files. */
-
+    
+    "outDir": "./build",
+    
     /* Modules */
     "module": "commonjs",                                /* Specify what module code is generated. */
     
