@@ -1,0 +1,780 @@
+import { QuizType } from "../interfaces/question.interface";
+
+export const quizQuestion: QuizType = {
+  arrays: [
+    {
+      question:
+        "Which of the following data structures is used to store multiple values in a single variable?",
+      options: [
+        {
+          label: "A",
+          value: "String",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "Integer",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "Array",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "Float",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question: "What is the index of the first element in an array?",
+      options: [
+        {
+          label: "A",
+          value: "0",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "1",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "-1",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "Depends on the programming language",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question:
+        "What method is used to add new elements to an array in JavaScript?",
+      options: [
+        {
+          label: "A",
+          value: "push()",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "pop()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "shift()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "unshift()",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question:
+        "What method is used to remove the last element from an array in JavaScript?",
+      options: [
+        {
+          label: "A",
+          value: "pop()",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "push()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "shift()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "unshift()",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question:
+        "How do you iterate over elements in an array in Python using a for loop?",
+      options: [
+        {
+          label: "A",
+          value: "for i in range(len(my_array))",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "for item in my_array",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "for (var i = 0; i < myArray.length; i++)",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "for (var item of myArray)",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 15,
+      point: 150,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question: "What method is used to concatenate two arrays in JavaScript?",
+      options: [
+        {
+          label: "A",
+          value: "concat()",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "join()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "splice()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "slice()",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question: "How do you declare a multidimensional array in Java?",
+      options: [
+        {
+          label: "A",
+          value: "int[][] myArray;",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "int[][] myArray = new int[][];",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "int[][] myArray[];",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "int[] myArray[];",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 15,
+      time: 15,
+      point: 225,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question:
+        "What method is used to find the index of a specific element in an array in JavaScript?",
+      options: [
+        {
+          label: "A",
+          value: "indexOf()",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "findIndex()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "search()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "includes()",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question:
+        "What method is used to sort elements in an array in JavaScript?",
+      options: [
+        {
+          label: "A",
+          value: "sort()",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "sorted()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "order()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "arrange()",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question: "How do you declare a fixed-size array in Java?",
+      options: [
+        {
+          label: "A",
+          value: "int[] myArray = new int[10];",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "int[10] myArray;",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "int myArray[10];",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "int myArray = new int[10];",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 15,
+      time: 15,
+      point: 225,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question:
+        "What method is used to remove an element from a specific index in an array in JavaScript?",
+      options: [
+        {
+          label: "A",
+          value: "splice()",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "slice()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "remove()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "delete()",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question:
+        "What method is used to convert an array to a string in JavaScript?",
+      options: [
+        {
+          label: "A",
+          value: "toString()",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "stringify()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "toText()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "convertToString()",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question: "How do you declare an empty array in Python?",
+      options: [
+        {
+          label: "A",
+          value: "my_array = []",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "my_array = {}",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "my_array = ()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "my_array = None",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question:
+        "What method is used to find the maximum value in an array in Java?",
+      options: [
+        {
+          label: "A",
+          value: "Arrays.max()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "Collections.max()",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "Math.max()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "Arrays.getMax()",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question:
+        "What method is used to check if an array includes a specific element in JavaScript?",
+      options: [
+        {
+          label: "A",
+          value: "contains()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "exists()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "includes()",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "has()",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question:
+        "What method is used to reverse the order of elements in an array in Python?",
+      options: [
+        {
+          label: "A",
+          value: "reverse()",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "backward()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "flip()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "invert()",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question:
+        "What method is used to convert a string to an array in JavaScript?",
+      options: [
+        {
+          label: "A",
+          value: "split()",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "parse()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "concat()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "join()",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question: "How do you remove all elements from an array in Java?",
+      options: [
+        {
+          label: "A",
+          value: "myArray.clear()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "myArray.removeAll()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "myArray.clearElements()",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "myArray = new int[0];",
+          isCorrect: true,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question:
+        "What is the time complexity of accessing an element by its index in an array?",
+      options: [
+        {
+          label: "A",
+          value: "O(n)",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "O(log n)",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "O(1)",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "O(n^2)",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 20,
+      time: 15,
+      point: 300,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question: "How can you iterate through each element of an array in PHP?",
+      options: [
+        {
+          label: "A",
+          value: "for (element in myArray)",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "for (i = 0; i < myArray.length; i++)",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "while (myArray.hasNext())",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "foreach myArray as element",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 10,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question:
+        "What is the difference between a one-dimensional array and a two-dimensional array (matrix)?",
+      options: [
+        {
+          label: "A",
+          value:
+            "One-dimensional array stores only numbers, while a two-dimensional array can store any data type.",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value:
+            "One-dimensional array has a single row, while a two-dimensional array has multiple rows and columns.",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "There is no difference, they are the same concept.",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value:
+            "Two-dimensional arrays are always sorted, while one-dimensional arrays can be unsorted.",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 15,
+      point: 100,
+      isAnswered: false,
+      isCompleted: false,
+    },
+    {
+      question: "What are the benefits of using arrays in programming?",
+      options: [
+        {
+          label: "A",
+          value: "Arrays efficiently store collections of similar data types.",
+          isCorrect: true,
+          isSelected: false,
+        },
+        {
+          label: "B",
+          value: "Arrays can only be used for mathematical calculations.",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "C",
+          value: "Arrays are slower to access than individual variables.",
+          isCorrect: false,
+          isSelected: false,
+        },
+        {
+          label: "D",
+          value: "Arrays require complex syntax to use.",
+          isCorrect: false,
+          isSelected: false,
+        },
+      ],
+      score: 10,
+      time: 15,
+      point: 150,
+      isAnswered: false,
+      isCompleted: false,
+    },
+  ],
+  loops: [],
+  functions: [],
+  variables: [],
+  classes: [],
+  methods: [],
+  inheritance: [],
+  encapsulation: [],
+  polymorphism: [],
+  general: []
+};
