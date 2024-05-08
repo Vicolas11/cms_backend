@@ -10,16 +10,9 @@ import { prisma } from "../../server";
 import bcrypt from "bcryptjs";
 
 const RegisterController = catchAsync(async (req: Request, res: Response) => {
-  const {
-    role,
-    name,
-    faculty,
-    department,
-    matricNum,
-    email,
-    password,
-    gender,
-  } = req.body;
+  let { role, name, faculty, department, matricNum, email, password, gender } =
+    req.body;
+  matricNum = `${matricNum}`.toUpperCase();
 
   try {
     // Check if user with the same email already exists
@@ -91,8 +84,7 @@ const RegisterController = catchAsync(async (req: Request, res: Response) => {
         faculty: role === "Dean" ? faculty : undefined,
         department:
           role === "Student" || role === "HOD" ? department : undefined,
-        matricNum:
-          role === "Student" ? `${matricNum}`.toUpperCase() : undefined,
+        matricNum: role === "Student" ? matricNum : undefined,
         avatar: randomAvatar(gender === "Male"),
         password: hashedPassword,
       },

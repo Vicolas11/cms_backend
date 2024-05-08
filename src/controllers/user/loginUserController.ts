@@ -9,7 +9,8 @@ import { prisma } from "../../server";
 import bcrypt from "bcryptjs";
 
 const LoginUserController = catchAsync(async (req: Request, res: Response) => {
-  const { email, matricNum, password, role } = req.body;
+  let { email, matricNum, password, role } = req.body;
+  matricNum = `${matricNum}`.toUpperCase();
 
   try {
     // Check if the user exists
@@ -106,6 +107,8 @@ const LoginUserController = catchAsync(async (req: Request, res: Response) => {
   } catch (err: any) {
     const message =
       formatErrMsg(err.message) || err.message || "An error occurred";
+
+    console.log(err);
 
     auditTrail({
       status: err.status || 500,
