@@ -4,6 +4,5 @@ import { BlacklistedTokenCreateManyUserInputSchemaObject } from './BlacklistedTo
 
 export const BlacklistedTokenCreateManyUserInputEnvelopeSchemaObject = {
     data: Joi.alternatives().try(Joi.object().keys(BlacklistedTokenCreateManyUserInputSchemaObject),
-Joi.array().items(Joi.object().keys(BlacklistedTokenCreateManyUserInputSchemaObject))),
-  skipDuplicates: Joi.boolean()
+Joi.array().items(Joi.object().keys(BlacklistedTokenCreateManyUserInputSchemaObject)))
 }

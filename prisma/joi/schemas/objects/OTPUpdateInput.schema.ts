@@ -5,9 +5,7 @@ import { DateTimeFieldUpdateOperationsInputSchemaObject } from './DateTimeFieldU
 import { UserUpdateOneRequiredWithoutOtpNestedInputSchemaObject } from './UserUpdateOneRequiredWithoutOtpNestedInput.schema'
 
 export const OTPUpdateInputSchemaObject = {
-    id: Joi.alternatives().try(Joi.string(),
-Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),
-  otp: Joi.alternatives().try(Joi.string(),
+    otp: Joi.alternatives().try(Joi.string(),
 Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),
   otpExpiration: Joi.alternatives().try(Joi.object().keys(DateTimeFieldUpdateOperationsInputSchemaObject)),
   user: Joi.object().keys(UserUpdateOneRequiredWithoutOtpNestedInputSchemaObject)

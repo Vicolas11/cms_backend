@@ -7,5 +7,6 @@ export const NestedEnumDepartmentNullableWithAggregatesFilterSchemaObject = {
     not: Joi.alternatives().try(Joi.link('#NestedEnumDepartmentNullableWithAggregatesFilter')),
   _count: Joi.object().keys(NestedIntNullableFilterSchemaObject),
   _min: Joi.object().keys(NestedEnumDepartmentNullableFilterSchemaObject),
-  _max: Joi.object().keys(NestedEnumDepartmentNullableFilterSchemaObject)
+  _max: Joi.object().keys(NestedEnumDepartmentNullableFilterSchemaObject),
+  isSet: Joi.boolean()
 }

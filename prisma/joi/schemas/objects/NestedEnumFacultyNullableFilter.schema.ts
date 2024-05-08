@@ -3,5 +3,6 @@ import Joi from 'joi';
 
 
 export const NestedEnumFacultyNullableFilterSchemaObject = {
-    not: Joi.alternatives().try(Joi.link('#NestedEnumFacultyNullableFilter'))
+    not: Joi.alternatives().try(Joi.link('#NestedEnumFacultyNullableFilter')),
+  isSet: Joi.boolean()
 }

@@ -13,7 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@elasticemail/elasticemail-client": "github:elasticemail/elasticemail-js",
     "@prisma/client": "^4.16.2",
     "@types/jsonwebtoken": "^9.0.6",
     "axios": "^1.6.8",
@@ -34,7 +33,6 @@
     "nodemailer": "^6.9.13",
     "prisma-joi-generator": "^0.2.0",
     "uuid": "^9.0.1",
-    "xss-clean": "^0.1.4",
     "xss-shield": "^1.0.1"
   },
   "devDependencies": {

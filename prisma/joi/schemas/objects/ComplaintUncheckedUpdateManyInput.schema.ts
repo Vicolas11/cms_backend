@@ -6,9 +6,7 @@ import { DateTimeFieldUpdateOperationsInputSchemaObject } from './DateTimeFieldU
 import { NullableStringFieldUpdateOperationsInputSchemaObject } from './NullableStringFieldUpdateOperationsInput.schema'
 
 export const ComplaintUncheckedUpdateManyInputSchemaObject = {
-    id: Joi.alternatives().try(Joi.string(),
-Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),
-  subject: Joi.alternatives().try(Joi.string(),
+    subject: Joi.alternatives().try(Joi.string(),
 Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),
   body: Joi.alternatives().try(Joi.string(),
 Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),

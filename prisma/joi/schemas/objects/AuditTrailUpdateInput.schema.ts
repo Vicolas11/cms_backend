@@ -6,9 +6,7 @@ import { DateTimeFieldUpdateOperationsInputSchemaObject } from './DateTimeFieldU
 import { UserUpdateOneWithoutAuditTrailNestedInputSchemaObject } from './UserUpdateOneWithoutAuditTrailNestedInput.schema'
 
 export const AuditTrailUpdateInputSchemaObject = {
-    id: Joi.alternatives().try(Joi.string(),
-Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),
-  action: Joi.alternatives().try(Joi.string(),
+    action: Joi.alternatives().try(Joi.string(),
 Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),
   message: Joi.alternatives().try(Joi.string(),
 Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),

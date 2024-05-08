@@ -20,5 +20,6 @@ Joi.string()),
 Joi.link('#NestedStringNullableWithAggregatesFilter')),
   _count: Joi.object().keys(NestedIntNullableFilterSchemaObject),
   _min: Joi.object().keys(NestedStringNullableFilterSchemaObject),
-  _max: Joi.object().keys(NestedStringNullableFilterSchemaObject)
+  _max: Joi.object().keys(NestedStringNullableFilterSchemaObject),
+  isSet: Joi.boolean()
 }

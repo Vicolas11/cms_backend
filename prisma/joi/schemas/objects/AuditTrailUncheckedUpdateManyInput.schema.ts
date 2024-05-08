@@ -1,14 +1,12 @@
 // @ts-nocheck
 import Joi from 'joi';
-import { StringFieldUpdateOperationsInputSchemaObject } from './StringFieldUpdateOperationsInput.schema';
 import { NullableStringFieldUpdateOperationsInputSchemaObject } from './NullableStringFieldUpdateOperationsInput.schema';
+import { StringFieldUpdateOperationsInputSchemaObject } from './StringFieldUpdateOperationsInput.schema';
 import { IntFieldUpdateOperationsInputSchemaObject } from './IntFieldUpdateOperationsInput.schema';
 import { DateTimeFieldUpdateOperationsInputSchemaObject } from './DateTimeFieldUpdateOperationsInput.schema'
 
 export const AuditTrailUncheckedUpdateManyInputSchemaObject = {
-    id: Joi.alternatives().try(Joi.string(),
-Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),
-  actorId: Joi.alternatives().try(Joi.string(),
+    actorId: Joi.alternatives().try(Joi.string(),
 Joi.object().keys(NullableStringFieldUpdateOperationsInputSchemaObject)),
   action: Joi.alternatives().try(Joi.string(),
 Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),

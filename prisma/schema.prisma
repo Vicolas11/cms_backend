@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
@@ -55,7 +55,7 @@ enum Department {
 }
 
 model User {
-  id         String             @id @default(uuid())
+  id         String             @id @default(uuid()) @map("_id")
   role       Role               @default(Student)
   name       String
   email      String             @unique
@@ -75,7 +75,7 @@ model User {
 }
 
 model Complaint {
-  id               String    @id @default(uuid())
+  id               String    @id @default(uuid()) @map("_id")
   subject          String
   body             String
   reportedTo       User      @relation("reportedTo", fields: [reportedToUserId], references: [id], onDelete: Cascade)
@@ -90,7 +90,7 @@ model Complaint {
 }
 
 model Response {
-  id          String    @id @default(uuid())
+  id          String    @id @default(uuid()) @map("_id")
   body        String
   createdAt   DateTime  @default(now())
   complaint   Complaint @relation(fields: [complaintId], references: [id], onDelete: Cascade)
@@ -100,15 +100,15 @@ model Response {
 }
 
 model BlacklistedToken {
-  id        String   @id @default(uuid())
+  id        String   @id @default(uuid()) @map("_id")
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String
-  token     String   @unique @db.VarChar(1024)
+  token     String   @unique
   createdAt DateTime @default(now())
 }
 
 model AuditTrail {
-  id         String   @id @default(uuid())
+  id         String   @id @default(uuid()) @map("_id")
   actor      User?    @relation(fields: [actorId], references: [id])
   actorId    String?
   action     String
@@ -120,7 +120,7 @@ model AuditTrail {
 }
 
 model OTP {
-  id            String   @id @default(uuid())
+  id            String   @id @default(uuid()) @map("_id")
   otp           String
   user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId        String   @unique

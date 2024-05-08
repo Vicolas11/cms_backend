@@ -1,7 +1,6 @@
 // @ts-nocheck
 import Joi from 'joi';
 import { SortOrderSchema } from '../enums/SortOrder.schema';
-import { SortOrderInputSchemaObject } from './SortOrderInput.schema';
 import { AuditTrailCountOrderByAggregateInputSchemaObject } from './AuditTrailCountOrderByAggregateInput.schema';
 import { AuditTrailAvgOrderByAggregateInputSchemaObject } from './AuditTrailAvgOrderByAggregateInput.schema';
 import { AuditTrailMaxOrderByAggregateInputSchemaObject } from './AuditTrailMaxOrderByAggregateInput.schema';
@@ -10,8 +9,7 @@ import { AuditTrailSumOrderByAggregateInputSchemaObject } from './AuditTrailSumO
 
 export const AuditTrailOrderByWithAggregationInputSchemaObject = {
     id: SortOrderSchema,
-  actorId: Joi.alternatives().try(SortOrderSchema,
-Joi.object().keys(SortOrderInputSchemaObject)),
+  actorId: SortOrderSchema,
   action: SortOrderSchema,
   message: SortOrderSchema,
   status: SortOrderSchema,

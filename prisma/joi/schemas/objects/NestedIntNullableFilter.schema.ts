@@ -13,5 +13,6 @@ Joi.number()),
   gt: Joi.number(),
   gte: Joi.number(),
   not: Joi.alternatives().try(Joi.number(),
-Joi.link('#NestedIntNullableFilter'))
+Joi.link('#NestedIntNullableFilter')),
+  isSet: Joi.boolean()
 }

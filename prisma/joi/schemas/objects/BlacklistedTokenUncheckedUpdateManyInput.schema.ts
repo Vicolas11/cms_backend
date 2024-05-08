@@ -4,9 +4,7 @@ import { StringFieldUpdateOperationsInputSchemaObject } from './StringFieldUpdat
 import { DateTimeFieldUpdateOperationsInputSchemaObject } from './DateTimeFieldUpdateOperationsInput.schema'
 
 export const BlacklistedTokenUncheckedUpdateManyInputSchemaObject = {
-    id: Joi.alternatives().try(Joi.string(),
-Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),
-  userId: Joi.alternatives().try(Joi.string(),
+    userId: Joi.alternatives().try(Joi.string(),
 Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),
   token: Joi.alternatives().try(Joi.string(),
 Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),

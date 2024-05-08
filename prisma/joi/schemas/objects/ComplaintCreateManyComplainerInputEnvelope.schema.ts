@@ -4,6 +4,5 @@ import { ComplaintCreateManyComplainerInputSchemaObject } from './ComplaintCreat
 
 export const ComplaintCreateManyComplainerInputEnvelopeSchemaObject = {
     data: Joi.alternatives().try(Joi.object().keys(ComplaintCreateManyComplainerInputSchemaObject),
-Joi.array().items(Joi.object().keys(ComplaintCreateManyComplainerInputSchemaObject))),
-  skipDuplicates: Joi.boolean()
+Joi.array().items(Joi.object().keys(ComplaintCreateManyComplainerInputSchemaObject)))
 }

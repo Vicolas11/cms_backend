@@ -4,6 +4,5 @@ import { ResponseCreateManyUserInputSchemaObject } from './ResponseCreateManyUse
 
 export const ResponseCreateManyUserInputEnvelopeSchemaObject = {
     data: Joi.alternatives().try(Joi.object().keys(ResponseCreateManyUserInputSchemaObject),
-Joi.array().items(Joi.object().keys(ResponseCreateManyUserInputSchemaObject))),
-  skipDuplicates: Joi.boolean()
+Joi.array().items(Joi.object().keys(ResponseCreateManyUserInputSchemaObject)))
 }

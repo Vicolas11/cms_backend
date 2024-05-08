@@ -9,9 +9,7 @@ import { UserUpdateOneRequiredWithoutComplaintsNestedInputSchemaObject } from '.
 import { ResponseUpdateOneWithoutComplaintNestedInputSchemaObject } from './ResponseUpdateOneWithoutComplaintNestedInput.schema'
 
 export const ComplaintUpdateInputSchemaObject = {
-    id: Joi.alternatives().try(Joi.string(),
-Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),
-  subject: Joi.alternatives().try(Joi.string(),
+    subject: Joi.alternatives().try(Joi.string(),
 Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),
   body: Joi.alternatives().try(Joi.string(),
 Joi.object().keys(StringFieldUpdateOperationsInputSchemaObject)),

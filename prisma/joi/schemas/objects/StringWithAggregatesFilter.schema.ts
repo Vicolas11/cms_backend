@@ -1,5 +1,6 @@
 // @ts-nocheck
 import Joi from 'joi';
+import { QueryModeSchema } from '../enums/QueryMode.schema';
 import { NestedStringWithAggregatesFilterSchemaObject } from './NestedStringWithAggregatesFilter.schema';
 import { NestedIntFilterSchemaObject } from './NestedIntFilter.schema';
 import { NestedStringFilterSchemaObject } from './NestedStringFilter.schema'
@@ -17,6 +18,7 @@ Joi.string()),
   contains: Joi.string(),
   startsWith: Joi.string(),
   endsWith: Joi.string(),
+  mode: QueryModeSchema,
   not: Joi.alternatives().try(Joi.string(),
 Joi.object().keys(NestedStringWithAggregatesFilterSchemaObject)),
   _count: Joi.object().keys(NestedIntFilterSchemaObject),

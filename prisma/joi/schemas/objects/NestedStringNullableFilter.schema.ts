@@ -16,5 +16,6 @@ Joi.string()),
   startsWith: Joi.string(),
   endsWith: Joi.string(),
   not: Joi.alternatives().try(Joi.string(),
-Joi.link('#NestedStringNullableFilter'))
+Joi.link('#NestedStringNullableFilter')),
+  isSet: Joi.boolean()
 }

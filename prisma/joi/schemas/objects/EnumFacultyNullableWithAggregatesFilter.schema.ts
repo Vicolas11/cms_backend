@@ -8,5 +8,6 @@ export const EnumFacultyNullableWithAggregatesFilterSchemaObject = {
     not: Joi.alternatives().try(Joi.object().keys(NestedEnumFacultyNullableWithAggregatesFilterSchemaObject)),
   _count: Joi.object().keys(NestedIntNullableFilterSchemaObject),
   _min: Joi.object().keys(NestedEnumFacultyNullableFilterSchemaObject),
-  _max: Joi.object().keys(NestedEnumFacultyNullableFilterSchemaObject)
+  _max: Joi.object().keys(NestedEnumFacultyNullableFilterSchemaObject),
+  isSet: Joi.boolean()
 }
