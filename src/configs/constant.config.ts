@@ -8,12 +8,5 @@ export const constant = {
   secretKey: process.env.SECRET_KEY as string,
   maleUrl: process.env.AVA_MALE_URL,
   femaleUrl: process.env.AVA_FEMALE_URL,
-  elasticAPIKey: process.env.ELASTIC_APIKEY,
-  clientSecret: process.env.CLIENT_SECRET,
-  SMTPHost: process.env.SMTP_HOST as string,
-  SMTPort: process.env.SMPT_PORT,
-  SMTPUsername: process.env.SMTP_USERNAME,
-  SMTPassword: process.env.SMTP_PASSWORD,
-  SMTPSender: process.env.SMTP_SENDER,
   mailerSendAPIKey: process.env.MAILER_API_KEY,
 };

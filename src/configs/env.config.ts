@@ -9,6 +9,5 @@ export const envConfig: IEnvConfig = {
   test: ENV === "test",
   dev: ENV === "development",
   prod: ENV === "production",
-  url: process.env.BASE_URL as string,
   port: +(process.env.PORT as unknown as number) || 8080
 };
